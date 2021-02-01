@@ -72,6 +72,7 @@ if(isset($_POST["enviarcarrito"])){
                     if($producto["id"] == $id){
                         unset($_SESSION["carrito"][$var]);
                         break;
+                        
                         // echo "<script>alert('hola hasta aca todo ok')</script>";
                     }
                 }
