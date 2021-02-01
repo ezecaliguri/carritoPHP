@@ -7,7 +7,9 @@ if(isset($_POST["enviarcarrito"])){
 
     switch($_POST["enviarcarrito"]){
 
-        case "agregar":            
+        case "agregar": 
+            // recibo los datos del index name="id" , id="id"
+            
             if (is_numeric(openssl_decrypt($_POST["id"],COD,KEY))){
                 $id = openssl_decrypt($_POST["id"],COD,KEY);
             }else {
@@ -64,14 +66,13 @@ if(isset($_POST["enviarcarrito"])){
         
         case "borrar": 
 
-            
-            // echo "<script>alert('hola hasta aca todo ok')</script>";
-
-            if (is_numeric(openssl_decrypt($_POST["id"],COD,KEY))){
-                $id = openssl_decrypt($_POST["id"],COD,KEY);
+            if (is_numeric(openssl_decrypt($_POST["ID"],COD,KEY))){
+                $id = openssl_decrypt($_POST["ID"],COD,KEY);
                 foreach($_SESSION["carrito"] as $var => $producto){
                     if($producto["id"] == $id){
                         unset($_SESSION["carrito"][$var]);
+                        break;
+                        // echo "<script>alert('hola hasta aca todo ok')</script>";
                     }
                 }
             }else {

@@ -23,8 +23,9 @@
             <th width="10%" class="text-center">--</th>
         </tr> 
 
-        <!-- suma total de los productos -->
         <?php $total= 0;?>
+
+            <!-- Recibo los datos del producto en un arreglo de session -->
         <?php foreach($_SESSION["carrito"] as $var => $producto){ ?>
 
         <tr>
@@ -47,10 +48,11 @@
                 <form action="" method="post">
                     <input 
                     type="hidden" 
-                    name="id" 
-                    id="id" 
+                    name="ID" 
+                    id="ID" 
                     value= "<?php echo openssl_encrypt($producto["id"],COD,KEY); ?>">
                     
+                    <!-- Envio un value de eliminar con el ID  -->
                     <button 
                         class= "btn btn-danger" 
                         type="submit" 
@@ -60,6 +62,7 @@
             </td>
         </tr>
         
+        <!-- suma total de los productos -->
         <?php $total= $total +($producto["precio"]* $producto["cantidad"]);?>
         <?php }?>
         
