@@ -13,9 +13,6 @@
 ?>
 
 <br>
-<br>
-<br>
-<br>
 <div class="alert alert-success text-center ">
     <!-- <?php echo $alerta;?> -->
     ¡Nuestros Productos!
