@@ -1,6 +1,6 @@
 </div>
 <br>
-<footer class="py-5">
+<footer class="py-5 ">
     <table class="table table-dark text-center ">
         <tbody>
             <tr>

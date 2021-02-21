@@ -31,18 +31,19 @@
         <tr>
             <td class="text-center">
             <div class="card-img-top p-2">
-            <img src="<?php echo $producto["imagen"];?>" 
+            <img src="<?= $producto["imagen"];?>" 
                     class="" 
                     alt="..." 
                     data-bs-toggle="popover" 
-                    title= "<?php echo $producto["descripcion"];?>"            
+                    title= "<?= $producto["descripcion"];?>"            
                     height= "100px"
                 ></div>
             </td>
-            <td class="text-center"><?php echo $producto["nombre"];?></td>
-            <td class="text-center">$<?php echo $producto["precio"];?></td>
-            <td class="text-center"><?php echo $producto["cantidad"];?></td>
-            <td class="text-center">$<?php echo number_format($producto["precio"]*$producto["cantidad"],2);?></td>
+
+            <td class="text-center"><?= $producto["nombre"];?></td>
+            <td class="text-center">$<?= $producto["precio"];?></td>            
+            <td class="text-center"><?= $producto["cantidad"];?></td>
+            <td class="text-center">$<?= number_format($producto["precio"]*$producto["cantidad"],2);?></td>
             
             <td class="text-center">
                 <form action="" method="post">
@@ -50,7 +51,7 @@
                     type="hidden" 
                     name="ID" 
                     id="ID" 
-                    value= "<?php echo openssl_encrypt($producto["id"],COD,KEY); ?>">
+                    value= "<?= openssl_encrypt($producto["id"],COD,KEY); ?>">
                     
                     <!-- Envio un value de eliminar con el ID  -->
                     <button 
@@ -63,12 +64,12 @@
         </tr>
         
         <!-- suma total de los productos -->
-        <?php $total= $total +($producto["precio"]* $producto["cantidad"]);?>
+        <?php $total +=($producto["precio"]* $producto["cantidad"]);?>
         <?php }?>
         
         <tr class="table-active">
             <td colspan="3" align="right" width="60%"><h3>Total</h3></td>
-            <td align="right" width="30%"><h3><?php  echo number_format($total,2);   ?></h3></td>
+            <td align="right" width="30%"><h3><?= number_format($total,2);   ?></h3></td>
             <td><button class="btn btn-info" width="10%">Comprar</button></td>
         </tr>
 

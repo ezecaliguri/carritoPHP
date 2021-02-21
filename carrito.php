@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-$alerta = "";
 
 if(isset($_POST["enviarcarrito"])){
 
@@ -50,19 +49,24 @@ if(isset($_POST["enviarcarrito"])){
                 );
                 $_SESSION["carrito"][0]=$producto;
             } else {
-                $numProductos = count($_SESSION["carrito"]);
-                $producto = array (
-                    "id" => $id,
-                    "nombre" => $nombre,
-                    "precio" => $precio,
-                    "cantidad" => $cantidad,
-                    "imagen" => $imagen
-                );
-                $_SESSION["carrito"][$numProductos]=$producto;
+                $idProducto = array_column($_SESSION["carrito"],"id");
+                if(in_array($id,$idProducto)){
+                    echo "<script>alert('El producto se encuentra en el carrito');</script>";
+                } else {
+                    $numProductos = count($_SESSION["carrito"]);
+                    $producto = array (
+                        "id" => $id,
+                        "nombre" => $nombre,
+                        "precio" => $precio,
+                        "cantidad" => $cantidad,
+                        "imagen" => $imagen
+                    );
+                    $_SESSION["carrito"][$numProductos]=$producto;
+                }
             }
 
 
-            break;
+        break;
         
         case "borrar": 
 
@@ -77,9 +81,9 @@ if(isset($_POST["enviarcarrito"])){
                     }
                 }
             }else {
-                $alerta = "El id no es correcto" . $id ."<br>";
+                echo "<script>alert('El id no es correcto')</script>";
             }
-            break;
+        break;
 
     }
 

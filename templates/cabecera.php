@@ -27,6 +27,12 @@
                         ?>)
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="insertarproductos.php">InsertarProductos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="insertarproductos2.php">insertar 2, preparación</a>
+                </li>
             </ul>
         </div>
     </nav>

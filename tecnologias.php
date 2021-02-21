@@ -3,8 +3,6 @@
     include_once "carrito.php"; 
     include_once "templates/cabecera.php";
 ?>
-<br>
-<br>
 
 <div class="row row-cols-1 row-cols-md-2 bg-dark p-4 m-5 ">
   <div class="col p-2  border-top border-start border-white">

@@ -35,15 +35,16 @@
             height= "220px"
         >
         <div class="card-body">
-            <h5 class="card-title"><?php echo $producto["nombre"]; ?></h5>
+            <h5 class="card-title"><?= $producto["nombre"]; ?></h5>
             <p class="card-text"></p>
-            <h6 class="card-price">$<?php echo $producto["precio"]; ?></h6>
+            <h6 class="card-price">$<?= $producto["precio"]; ?></h6>
             <form action="" method="post">
-                <input type="hidden" name="imagen" id="imagen" value= "<?php echo openssl_encrypt($producto["imagen"],COD,KEY); ?>">
-                <input type="hidden" name="id" id="id" value= "<?php echo openssl_encrypt($producto["ID"],COD,KEY); ?>">
-                <input type="hidden" name="nombre" id="nombre" value= "<?php  echo openssl_encrypt($producto["nombre"],COD,KEY); ?>">
-                <input type="hidden" name="precio" id="precio" value= "<?php  echo openssl_encrypt($producto["precio"],COD,KEY);  ?>">
-                <input type="hidden" name="cantidad" id="cantidad" value= "<?php  echo openssl_encrypt(1,COD,KEY); ?>">
+                <input type="hidden" name="imagen" id="imagen" value= "<?= openssl_encrypt($producto["imagen"],COD,KEY); ?>">
+                <input type="hidden" name="id" id="id" value= "<?= openssl_encrypt($producto["ID"],COD,KEY); ?>">
+                <input type="hidden" name="nombre" id="nombre" value= "<?= openssl_encrypt($producto["nombre"],COD,KEY); ?>">
+                <input type="hidden" name="precio" id="precio" value= "<?= openssl_encrypt($producto["precio"],COD,KEY);  ?>">
+                <input type="hidden" name="cantidad" id="cantidad" value= "<?= openssl_encrypt(1,COD,KEY); ?>">               
+
                 <button type="submit" name="enviarcarrito" class="btn btn-primary" value="agregar">
                     Agregar al carrito
                 </button>
