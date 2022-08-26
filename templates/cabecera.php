@@ -11,7 +11,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top ">
         <a class="navbar-brand" href="index.php">
-        <img src="https://image.flaticon.com/icons/png/512/107/107831.png" alt="logo, carritophp" style="height: 25px; width: 25px;" class="m-1">
+        <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="logo, carritophp" style="height: 25px; width: 25px;" class="m-1">
         </a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

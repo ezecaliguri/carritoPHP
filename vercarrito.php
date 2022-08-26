@@ -34,9 +34,8 @@
             <img src="<?= $producto["imagen"];?>" 
                     class="" 
                     alt="..." 
-                    data-bs-toggle="popover" 
-                    title= "<?= $producto["descripcion"];?>"            
-                    height= "100px"
+                    data-bs-toggle="popover"
+                    width="35%"                     
                 ></div>
             </td>
 
